@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/player_mele_hit.wav-951321ee46d2342a0f2bdbecabe8ce22.sample"
+
+[deps]
+
+source_file="res://assets/sounds/player_mele_hit.wav"
+dest_files=[ "res://.import/player_mele_hit.wav-951321ee46d2342a0f2bdbecabe8ce22.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

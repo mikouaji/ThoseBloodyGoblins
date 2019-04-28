@@ -1,0 +1,271 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://scripts/GUI.gd" type="Script" id=1]
+[ext_resource path="res://assets/gui/button-nest.png" type="Texture" id=2]
+[ext_resource path="res://assets/gui/button-empty.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/AmaticSC-Bold.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/gui/button-mob.png" type="Texture" id=5]
+[ext_resource path="res://assets/gui/bg.png" type="Texture" id=6]
+[ext_resource path="res://assets/gui/lv.png" type="Texture" id=7]
+[ext_resource path="res://assets/gui/button-sword.png" type="Texture" id=8]
+[ext_resource path="res://assets/gui/skill-button-space.png" type="Texture" id=9]
+[ext_resource path="res://assets/gui/button-ranged.png" type="Texture" id=10]
+[ext_resource path="res://assets/gui/button-ranged-disabled.png" type="Texture" id=11]
+[ext_resource path="res://assets/gui/skill-button-ci.png" type="Texture" id=12]
+[ext_resource path="res://assets/gui/button-special.png" type="Texture" id=13]
+[ext_resource path="res://assets/gui/button-special-disabled.png" type="Texture" id=14]
+[ext_resource path="res://assets/gui/skill-button-xo.png" type="Texture" id=15]
+[ext_resource path="res://assets/gui/exp.png" type="Texture" id=16]
+[ext_resource path="res://assets/gui/exp-empty.png" type="Texture" id=17]
+[ext_resource path="res://assets/gui/exp-full.png" type="Texture" id=18]
+[ext_resource path="res://assets/gui/hp.png" type="Texture" id=19]
+[ext_resource path="res://assets/gui/hp-empty.png" type="Texture" id=20]
+[ext_resource path="res://assets/gui/hp-full.png" type="Texture" id=21]
+
+[node name="GUI" type="MarginContainer"]
+pause_mode = 2
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource( 1 )
+
+[node name="Bars" type="VBoxContainer" parent="."]
+margin_right = 1360.0
+margin_bottom = 100.0
+alignment = 1
+
+[node name="LVandEXP" type="HBoxContainer" parent="Bars"]
+margin_right = 1360.0
+margin_bottom = 48.0
+alignment = 1
+
+[node name="Mobs" type="MarginContainer" parent="Bars/LVandEXP"]
+margin_left = 60.0
+margin_right = 264.0
+margin_bottom = 48.0
+
+[node name="cnt" type="HBoxContainer" parent="Bars/LVandEXP/Mobs"]
+margin_right = 204.0
+margin_bottom = 48.0
+
+[node name="nico" type="TextureRect" parent="Bars/LVandEXP/Mobs/cnt"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture = ExtResource( 2 )
+
+[node name="nbg" type="NinePatchRect" parent="Bars/LVandEXP/Mobs/cnt"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+texture = ExtResource( 3 )
+
+[node name="Nests" type="Label" parent="Bars/LVandEXP/Mobs/cnt/nbg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.00392157, 0.564706, 0, 1 )
+text = "1"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="gico" type="TextureRect" parent="Bars/LVandEXP/Mobs/cnt"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+texture = ExtResource( 5 )
+
+[node name="gbg" type="NinePatchRect" parent="Bars/LVandEXP/Mobs/cnt"]
+margin_left = 156.0
+margin_right = 204.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+texture = ExtResource( 3 )
+
+[node name="Goblins" type="Label" parent="Bars/LVandEXP/Mobs/cnt/gbg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0.435294, 0.0588235, 1 )
+text = "1"
+align = 1
+valign = 1
+
+[node name="Level" type="MarginContainer" parent="Bars/LVandEXP"]
+margin_left = 268.0
+margin_right = 428.0
+margin_bottom = 48.0
+
+[node name="Bg" type="NinePatchRect" parent="Bars/LVandEXP/Level"]
+margin_right = 160.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 160, 48 )
+texture = ExtResource( 6 )
+
+[node name="Numbers" type="Label" parent="Bars/LVandEXP/Level/Bg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -12.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "1"
+align = 2
+valign = 1
+
+[node name="Title" type="TextureRect" parent="Bars/LVandEXP/Level/Bg"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 48.0
+texture = ExtResource( 7 )
+
+[node name="Skills" type="MarginContainer" parent="Bars/LVandEXP"]
+margin_left = 432.0
+margin_right = 812.0
+margin_bottom = 48.0
+
+[node name="cnt" type="HBoxContainer" parent="Bars/LVandEXP/Skills"]
+margin_right = 380.0
+margin_bottom = 48.0
+
+[node name="Sword" type="TextureButton" parent="Bars/LVandEXP/Skills/cnt"]
+margin_right = 48.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 8 )
+
+[node name="SwordKey" type="TextureRect" parent="Bars/LVandEXP/Skills/cnt"]
+margin_left = 52.0
+margin_right = 124.0
+margin_bottom = 48.0
+texture = ExtResource( 9 )
+
+[node name="Range" type="TextureButton" parent="Bars/LVandEXP/Skills/cnt"]
+margin_left = 128.0
+margin_right = 176.0
+margin_bottom = 48.0
+disabled = true
+texture_normal = ExtResource( 10 )
+texture_disabled = ExtResource( 11 )
+
+[node name="RangeKey" type="TextureRect" parent="Bars/LVandEXP/Skills/cnt"]
+margin_left = 180.0
+margin_right = 252.0
+margin_bottom = 48.0
+texture = ExtResource( 12 )
+
+[node name="Special" type="TextureButton" parent="Bars/LVandEXP/Skills/cnt"]
+margin_left = 256.0
+margin_right = 304.0
+margin_bottom = 48.0
+disabled = true
+texture_normal = ExtResource( 13 )
+texture_disabled = ExtResource( 14 )
+
+[node name="SpecialKey" type="TextureRect" parent="Bars/LVandEXP/Skills/cnt"]
+margin_left = 308.0
+margin_right = 380.0
+margin_bottom = 48.0
+texture = ExtResource( 15 )
+
+[node name="Exp" type="MarginContainer" parent="Bars/LVandEXP"]
+margin_left = 816.0
+margin_right = 976.0
+margin_bottom = 48.0
+
+[node name="Bg" type="NinePatchRect" parent="Bars/LVandEXP/Exp"]
+margin_right = 160.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 160, 48 )
+texture = ExtResource( 6 )
+
+[node name="Title" type="TextureRect" parent="Bars/LVandEXP/Exp/Bg"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 48.0
+texture = ExtResource( 16 )
+
+[node name="Numbers" type="Label" parent="Bars/LVandEXP/Exp/Bg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -9.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "0/12"
+align = 2
+valign = 1
+
+[node name="mg" type="MarginContainer" parent="Bars/LVandEXP"]
+editor/display_folded = true
+margin_left = 980.0
+margin_right = 1300.0
+margin_bottom = 48.0
+
+[node name="TextureProgress" type="TextureProgress" parent="Bars/LVandEXP/mg"]
+margin_right = 320.0
+margin_bottom = 48.0
+texture_under = ExtResource( 17 )
+texture_progress = ExtResource( 18 )
+
+[node name="HP" type="HBoxContainer" parent="Bars"]
+editor/display_folded = true
+margin_top = 52.0
+margin_right = 1360.0
+margin_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Count" type="MarginContainer" parent="Bars/HP"]
+margin_left = 86.0
+margin_right = 246.0
+margin_bottom = 48.0
+
+[node name="Bg" type="NinePatchRect" parent="Bars/HP/Count"]
+margin_right = 160.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 160, 48 )
+texture = ExtResource( 6 )
+
+[node name="Title" type="TextureRect" parent="Bars/HP/Count/Bg"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 40.0
+texture = ExtResource( 19 )
+stretch_mode = 4
+
+[node name="Numbers" type="Label" parent="Bars/HP/Count/Bg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -7.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.941176, 0.835294, 0.835294, 1 )
+text = "100/100"
+align = 2
+valign = 1
+
+[node name="mg" type="MarginContainer" parent="Bars/HP"]
+margin_left = 250.0
+margin_right = 1274.0
+margin_bottom = 48.0
+
+[node name="HPbar" type="TextureProgress" parent="Bars/HP/mg"]
+margin_right = 1024.0
+margin_bottom = 48.0
+value = 100.0
+texture_under = ExtResource( 20 )
+texture_progress = ExtResource( 21 )
+
+[connection signal="pressed" from="Bars/LVandEXP/Skills/cnt/Sword" to="." method="_on_Sword_pressed"]
+[connection signal="pressed" from="Bars/LVandEXP/Skills/cnt/Range" to="." method="_on_Range_pressed"]
+[connection signal="pressed" from="Bars/LVandEXP/Skills/cnt/Special" to="." method="_on_Special_pressed"]
