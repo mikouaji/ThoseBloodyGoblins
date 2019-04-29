@@ -1,5 +1,5 @@
 # ThoseBloodyGoblins
-This is my LudumDare 44 Jam entry
+This is my LudumDare 44 Compo entry
 Tools used:
 - Godot Engine https://godotengine.org/
 - GIMP https://www.gimp.org/
